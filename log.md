@@ -14,4 +14,8 @@ With str() this formats to a nice readable format! Useful for log files.
 * timedelta can be decoded into days and seconds (t.days, t.seconds), not hours!  
 * overcome this issue by t.seconds / 60 / 60
 
-### Day 2:
+### Day 2
+
+**Work Log.**
+
+**Thing's I've learned.** 
