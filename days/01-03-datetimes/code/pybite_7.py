@@ -15,9 +15,13 @@ with open(logfile) as f:
     loglines = f.readlines()
 
 
-# for you to code:
-
+#%% for you to code:
+loglines[:2]
+#%%
 def convert_to_datetime(line):
+    time = line.split()[1]
+    time_format = '%Y-%m-%dT%H:%M:%S'
+    return datetime.strptime(time, time_format)
     """TODO 1:
        Extract timestamp from logline and convert it to a datetime object.
        For example calling the function with:
@@ -25,13 +29,16 @@ def convert_to_datetime(line):
        returns:
        datetime(2014, 7, 3, 23, 27, 51)
     """
-    pass
-
-
+#%%
 def time_between_shutdowns(loglines):
+    shutdown_events = [convert_to_datetime(line) for line in loglines if SHUTDOWN_EVENT in line]
+    shutdown_delta = shutdown_events[1] - shutdown_events[0]
     """TODO 2:
        Extract shutdown events ("Shutdown initiated") from loglines and
        calculate the timedelta between the first and last one.
        Return this datetime.timedelta object.
     """
-    pass
+    return shutdown_delta
+
+#%%
+time_between_shutdowns(loglines)
