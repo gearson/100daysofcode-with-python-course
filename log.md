@@ -27,3 +27,14 @@ With str() this formats to a nice readable format! Useful for log files.
 > us_date = eu_date.strftime('%m/%d/%Y')  
 
 * recap pybite 7. With line.split()[1] you split a string into a list where each word is an element in the list. In the pybite the dates where always the second 'word' in the string.
+
+### Day 3: 19/08/21
+
+**Work log.** Made a pomodoro timer.
+
+**Thong´s I´ve learned.**  
+* learned avout f strings! Super useful. 
+> f´Example text with a {variable}!´.  
+
+* also read up a bit on __name__==´__main_´  
+**Still not sure what exactly it does!**
