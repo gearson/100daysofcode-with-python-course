@@ -17,8 +17,7 @@ def pomodoro_timer(work_time=1, break_time=5, total_rounds=4):
             print(break_message)
             sleep(break_time * 60)
             
-if __name__ == "__main__":
-    pomodoro_timer()
+pomodoro_timer
 
 # TODO
 # * make GUI of sorts to query input from the User
