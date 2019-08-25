@@ -51,5 +51,4 @@ def get_movies_by_director(data=movies_csv):
 directors = get_movies_by_director()
 directors['George Lucas']
 
-
 #%%

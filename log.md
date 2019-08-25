@@ -99,4 +99,15 @@ From day 5:
 The Output of each line from DictReader is:
 >OrderedDict([('color', 'Color'), ('director_name', 'Jon Gunn'), ('num_critic_for_reviews', '43') ... etc. ])
 
-**Absolutely revisit pybite 13**
+**Absolutely revisit pybite 13**  
+Also check pybite solutions 001, 021, 023, 034, 036, 042, 045, 055, 057, 063, 076, 084, 086, 095, 096 on https://github.com/pybites/100DaysOfCode/blob/master/LOG.md
+
+## Day 7: 19/08/25
+
+**Work log.** Just day 7 videos and a bit messing around on data structures.
+
+**Thing's I've learned.** Refreshed mainly on some list methods like reverse, sort.  
+* list(str) to make a list of characters from a string.  
+* list.pop() to get last character in a list.  
+* list.insert(idx, x) to insert x at index.  
+* l.append() to add to the last position of a list.  
