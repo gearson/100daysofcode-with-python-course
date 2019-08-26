@@ -111,3 +111,21 @@ Also check pybite solutions 001, 021, 023, 034, 036, 042, 045, 055, 057, 063, 07
 * list.pop() to get last character in a list.  
 * list.insert(idx, x) to insert x at index.  
 * l.append() to add to the last position of a list.  
+
+## Day 8: 19/08/26
+
+**Work log.** Recapped some of the videos for day 7 and 8, recapped how to handle csvs with a Corey Schaefer video and completed Pybite 21.
+
+**Thing's I've learned.** 
+Again worked through this syntax to read csv files:  
+
+    with open(filename, 'r') as csv_file:
+       csv_reader = csv.reader(csv_file)
+       for line in csv_reader:
+           print(line)    
+
+Leaving this here now, since there will be a csv module on day 37-39 of this course.  
+Also got reminded that I need this syntax when I want to loop over a dictionary:  
+> for key, value in dictionary.**items()**  
+
+And use ', '.join(list) to join elements of a list to a single string with the given delimiter!  
