@@ -129,3 +129,17 @@ Also got reminded that I need this syntax when I want to loop over a dictionary:
 > for key, value in dictionary.**items()**  
 
 And use ', '.join(list) to join elements of a list to a single string with the given delimiter!  
+
+## Day 9: 19/08/27
+
+**Work log.** Started on pybite 89 and did some EDA stuff.
+
+
+## Day 10: 19/08/27
+
+**Work log.** Completed pybite 89 and started on videos for day 10.
+
+**Thing's I've learned.** 
+> sorted(list, key = lambda k: len(k))[-1]
+
+This takes a list, lambdas through it and assigns each element a key with it's length. It then sorts them and here  we take the last one.

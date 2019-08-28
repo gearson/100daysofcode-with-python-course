@@ -49,8 +49,10 @@ NOT_FOUND = 'N/A'
 def get_every_nth_state(states=states, n=10):
     """Return a list with every nth item (default argument n=10, so every
        10th item) of the states list above (remember: lists keep order)"""
-    pass
+    nth_state = [states[i] for i in range(n-1, len(states), n)]
+    return nth_state
 
+#%%
 
 def get_state_abbrev(state_name, us_state_abbrev=us_state_abbrev):
     """Look up a state abbreviation by querying the us_state_abbrev
@@ -58,20 +60,51 @@ def get_state_abbrev(state_name, us_state_abbrev=us_state_abbrev):
        'Illinois' returns 'IL'.
        If the state is not in the dict, return 'N/A' which we stored
        in the NOT_FOUND constant (takeaway: dicts are great for lookups)"""
-    pass
-
+    state_abbrev = us_state_abbrev.get(state_name, NOT_FOUND)
+    return state_abbrev
+print(get_state_abbrev('Alabdama'))
+#%%
 
 def get_longest_state(data):
     """Receives data, which can be the us_state_abbrev dict or the states
        list (see above). It returns the longest state measured by the length
        of the string"""
-    pass
+    if type(data) == dict:
+        str_list = list(data.keys())
+    else:
+        str_list = data
+    longest_str = []
+    for i in str_list:
+        if len(i) == len(max(str_list, key=len)):
+            longest_str.append(i)
+    return longest_str
 
+def get_longest_state(data):
+    return sorted(states, key = lambda k: len(k))[-1]
 
+#%%
 def combine_state_names_and_abbreviations(us_state_abbrev=us_state_abbrev,
                                           states=states):
     """Get the first 10 state abbreviations ('AL', 'AK', 'AZ', ...) from
        the us_state_abbrev dict, and the last 10 states from the states
        list (see above) and combine them into a new list without losing
        alphabetical order"""
-    pass
+    list_1 = list(us_state_abbrev.values())[:10]
+    list_1.sort()
+    states.sort()
+    list_1.extend(states[-10:])
+    
+    return list_1
+
+print(combine_state_names_and_abbreviations())
+
+#%%
+
+#%%
+x = lambda k: len(k)
+x('tassfest')
+#%%
+l_func = lambda k: len(k)
+test = [l_func(state) for state in states]
+test
+#%%
