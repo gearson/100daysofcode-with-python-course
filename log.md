@@ -126,7 +126,7 @@ Again worked through this syntax to read csv files:
 
 Leaving this here now, since there will be a csv module on day 37-39 of this course.  
 Also got reminded that I need this syntax when I want to loop over a dictionary:  
-> for key, value in dictionary.**items()**  
+> for key, value in dictionary.**items()**:  
 
 And use ', '.join(list) to join elements of a list to a single string with the given delimiter!  
 
@@ -135,7 +135,7 @@ And use ', '.join(list) to join elements of a list to a single string with the g
 **Work log.** Started on pybite 89 and did some EDA stuff.
 
 
-## Day 10: 19/08/27
+## Day 10: 19/08/28
 
 **Work log.** Completed pybite 89 and started on videos for day 10.
 
@@ -143,3 +143,13 @@ And use ', '.join(list) to join elements of a list to a single string with the g
 > sorted(list, key = lambda k: len(k))[-1]
 
 This takes a list, lambdas through it and assigns each element a key with it's length. It then sorts them and here  we take the last one.
+
+## Day 10: 19/08/29
+
+**Work log.** Mostly did some EDA stuff
+
+## Day 10: 19/08/30
+
+**Work log.** 
+
+**Thing's I've learned.** 
