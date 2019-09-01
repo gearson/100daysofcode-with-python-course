@@ -30,8 +30,7 @@ us_state_abbrev = {'Alabama': 'AL', 'Alaska': 'AK', 'Arizona': 'AZ',
                    'Tennessee': 'TN', 'Texas': 'TX', 'Utah': 'UT',
                    'Vermont': 'VT', 'Virginia': 'VA', 'Washington': 'WA',
                    'West Virginia': 'WV', 'Wisconsin': 'WI', 'Wyoming': 'WY'}
-#test
-s
+
 states = ['Oklahoma', 'Kansas', 'North Carolina', 'Georgia', 'Oregon',
           'Mississippi', 'Minnesota', 'Colorado', 'Alabama',
           'Massachusetts', 'Arizona', 'Connecticut', 'Montana',
