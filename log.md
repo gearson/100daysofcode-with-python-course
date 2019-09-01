@@ -126,7 +126,7 @@ Again worked through this syntax to read csv files:
 
 Leaving this here now, since there will be a csv module on day 37-39 of this course.  
 Also got reminded that I need this syntax when I want to loop over a dictionary:  
-> for key, value in dictionary.**items()**:  
+> for key, value in dictionary.**items()**  
 
 And use ', '.join(list) to join elements of a list to a single string with the given delimiter!  
 
@@ -144,12 +144,22 @@ And use ', '.join(list) to join elements of a list to a single string with the g
 
 This takes a list, lambdas through it and assigns each element a key with it's length. It then sorts them and here  we take the last one.
 
-## Day 10: 19/08/29
+## Day 11: 19/08/29
 
-**Work log.** Mostly did some EDA stuff
+**Work log.** Mostly some eda stuff.
 
-## Day 10: 19/08/30
+**Thing's I've learned.** I learned a some new stuff about plotting and this fig, ax = subplot() syntax.  
+Don't forget that dicts are unordered.  
 
-**Work log.** 
+## Day 12: 19/08/30
 
-**Thing's I've learned.** 
+**Work log.** Finished all videos of the testing block and played around a bit.
+
+**Thing's I've learned.** Intro to testing. **Will revisit testing at a later date!**  
+Also checkout https://pybit.es/pytest-fixtures.html
+
+## Day 13: 19/09/01
+
+**Work log.** Read up on venv and tested it a bit. https://docs.python.org/3/tutorial/venv.html
+
+**Thing's I've learned.** Learned how to use venv on windwos and WSL.
