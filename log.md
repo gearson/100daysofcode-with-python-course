@@ -163,3 +163,9 @@ Also checkout https://pybit.es/pytest-fixtures.html
 **Work log.** Read up on venv and tested it a bit. https://docs.python.org/3/tutorial/venv.html
 
 **Thing's I've learned.** Learned how to use venv on windwos and WSL.
+
+## Day 14: 19/09/02
+
+**Work log.** Text game videos (day 13-15). Coded along
+
+**Thing's I've learned.** Learned about classes, __init__, add behaviors with def
