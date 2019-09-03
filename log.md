@@ -169,3 +169,9 @@ Also checkout https://pybit.es/pytest-fixtures.html
 **Work log.** Text game videos (day 13-15). Coded along
 
 **Thing's I've learned.** Learned about classes, __init__, add behaviors with def
+
+## Day 15: 19/09/03
+
+**Work log.** Started on the rock, paper, scissors game.
+
+**Thing's I've learned.** Practicing how classes work. Not sure yet what this self really does.
