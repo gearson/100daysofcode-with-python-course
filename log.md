@@ -175,3 +175,9 @@ Also checkout https://pybit.es/pytest-fixtures.html
 **Work log.** Started on the rock, paper, scissors game.
 
 **Thing's I've learned.** Practicing how classes work. Not sure yet what this self really does.
+
+## Day 16: 19/09/04
+
+**Work log.** Worked on setting up zsh...
+
+**Thing's I've learned.** Figured some stuff out about zsh and themes. Nothing too productive...
