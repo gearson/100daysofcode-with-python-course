@@ -181,3 +181,35 @@ Also checkout https://pybit.es/pytest-fixtures.html
 **Work log.** Worked on setting up zsh...
 
 **Thing's I've learned.** Figured some stuff out about zsh and themes. Nothing too productive...
+
+## Day 17: 19/09/05
+
+**Work log.** Started on day 16 and 17 content. Still need to catch up with the rock, paper, scissors game, though. 
+
+**Thing's I've learned.** Learned mostly about list comprehensions and generators.  
+'string'.title() to capitalize first letter.
+Groupby two columns and only take the first of the duplicates
+> df_filtered = df.groupby(['UserId', 'DisplayTime']).head(1)
+
+> df_combis.columns[(df_combis == 1).iloc[i]]
+
+Used this for a problem today:
+action_dict = [{df_combis.index[i] : tuple(df_combis.columns[(df_combis == 1).iloc[i]])} for i in range(30)]
+
+> words = [word for word in words if word.strip() and word not in stopwords]  
+
+If word.strip() to check for empty strings. If we check for word.strip()==True we discard empty strings
+
+    def leap_years_lst(n=1000000):
+        leap_years = []
+        for year in range(1, n+1):
+            if calendar.isleap(year):
+                leap_years.append(year)
+            return leap_years
+
+    def leap_years_gen(n=1000000):
+        for year in range(1, n+1):
+            if calendar.isleap(year):
+                yield year
+
+Generators are faster. They are yielding one by one lazyly.
