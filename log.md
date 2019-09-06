@@ -213,3 +213,9 @@ If word.strip() to check for empty strings. If we check for word.strip()==True w
                 yield year
 
 Generators are faster. They are yielding one by one lazyly.
+
+## Day 18: 19/09/06
+
+**Work log.** Finished list comprehension and generator exercises. Implemented generators consciously during work, too.
+
+**Thing's I've learned.** Learned more about how to use generators. With itertools.islice I can also chose iterations for a generator.
