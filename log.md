@@ -225,6 +225,20 @@ https://codechalleng.es/bites/26/
 
 ## Day 19: 19/09/09
 
-**Work log.** Pybite 5 & 26, Day 19 videos.
+**Work log.** Pybite 5 & 26
 
-**Thing's I've learned.** 
+**Thing's I've learned.** min(list_of_strings, key=len) will return the shortest entry in the list
+Similary, sorted(NAMES, key=len) this will sort by length.
+
+> sorted(names, key=lambda x: x.split()[-1])  
+
+This will sort the names by taking each entry (x), splitting it and taking the last one ([-1])  
+
+Dictionary Comprehension:
+filtered_dict = {your_key: bites[your_key] for your_key in bites.keys() if your_key not in exclude_bites}
+
+## Day 20: 19/09/10
+
+**Work log.**
+
+**Thing's I've learned.**
