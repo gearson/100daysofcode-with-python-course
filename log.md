@@ -222,3 +222,9 @@ https://codechalleng.es/bites/5/
 https://codechalleng.es/bites/26/
 
 **Thing's I've learned.** Learned more about how to use generators. With itertools.islice I can also chose iterations for a generator.
+
+## Day 19: 19/09/09
+
+**Work log.** Pybite 5 & 26, Day 19 videos.
+
+**Thing's I've learned.** 
