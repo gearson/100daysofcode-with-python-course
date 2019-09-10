@@ -239,6 +239,6 @@ filtered_dict = {your_key: bites[your_key] for your_key in bites.keys() if your_
 
 ## Day 20: 19/09/10
 
-**Work log.**
+**Work log.** Trained generators on work problems.
 
-**Thing's I've learned.**
+**Thing's I've learned.** Started to grasp how generators work and apparently using list() on a generator causes it to iterate.

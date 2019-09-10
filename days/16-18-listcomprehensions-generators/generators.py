@@ -52,4 +52,3 @@ def leap_years_gen(n=1000000):
 #%%
 %timeit -n1 leap_years_gen()
 
-#%%
