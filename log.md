@@ -242,3 +242,48 @@ filtered_dict = {your_key: bites[your_key] for your_key in bites.keys() if your_
 **Work log.** Trained generators on work problems.
 
 **Thing's I've learned.** Started to grasp how generators work and apparently using list() on a generator causes it to iterate.
+
+## Day 21: 19/09/12
+
+**Work log.** Itertools videos.
+
+**Thing's I've learned.** For loops call __iter__.  
+next() can be used on an iterator. Returns StopIteratiom error when at the end of list. 
+
+    import itertools
+    import sys
+    import time
+    #%%
+    symbols = itertools.cycle('-\|/')
+
+    while True:
+        sys.stdout.write('\r' + next(symbols))
+        sys.stdout.flush()
+        time.sleep(1)  
+
+    
+'\r' negates pulling output on new line.  
+
+from itertools import product  
+Used for Carthesian product.
+
+> print(list(combinations(friends, 2)))
+> [('mike', 'bob'), ('mike', 'julian'), ('bob', 'julian')]  
+
+With permutations the order matters, too.
+
+## Day 21: 19/09/13  
+
+**Work Log.**  
+Traffic Light Script.  
+ * Cycle through red, amber & green and print color  
+ * bonus script with random times for cycle duration between red and green.  
+
+https://codechalleng.es/bites/64/
+https://codechalleng.es/bites/17/
+https://codechalleng.es/bites/65/
+
+
+**Thing's I've learned.** 
+
+
