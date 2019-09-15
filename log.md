@@ -259,7 +259,7 @@ next() can be used on an iterator. Returns StopIteratiom error when at the end o
     while True:
         sys.stdout.write('\r' + next(symbols))
         sys.stdout.flush()
-        time.sleep(1)  
+        time.sleep(1) 
 
     
 '\r' negates pulling output on new line.  
@@ -270,20 +270,30 @@ Used for Carthesian product.
 > print(list(combinations(friends, 2)))
 > [('mike', 'bob'), ('mike', 'julian'), ('bob', 'julian')]  
 
-With permutations the order matters, too.
+With permutations if the order of letters matters
 
-## Day 21: 19/09/13  
+## Day 22: 19/09/14 
 
 **Work Log.**  
 Traffic Light Script.  
  * Cycle through red, amber & green and print color  
  * bonus script with random times for cycle duration between red and green.  
 
+**Thing's I've learned.** Used itertools.cycle to go through a list of strings  
+> colors = itertools.cycle(['Red', 'Amber', 'Green', 'Amber'])
+
+## Day 23: 19/09/15
+
+**Work Log.** 
 https://codechalleng.es/bites/64/
 https://codechalleng.es/bites/17/
 https://codechalleng.es/bites/65/
+ 
+Day 22 & 23 content about decorators.
 
+**Thing's I've learned.** zip() makes an iterator that aggregates elements from each of the iterables. Stops when the shortest input iterable is exhausted.  
+> itertools.zip_longest()  
 
-**Thing's I've learned.** 
+This will fill with None. The argument fillvalue you can use something else to fill.
 
-
+itertools.permutations(iterable, i). Use second int argument to define tuple length. Useful for the scrabble script!
