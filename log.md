@@ -296,4 +296,62 @@ Day 22 & 23 content about decorators.
 
 This will fill with None. The argument fillvalue you can use something else to fill.
 
-itertools.permutations(iterable, i). Use second int argument to define tuple length. Useful for the scrabble script!
+itertools.permutations(iterable, i). Use second int argument to define tuple length. Useful for the scrabble script!  
+
+## Day 24: 19/09/16  
+
+**Work Log.** Continued on the decorator stuff. Slightly behind.
+https://codechalleng.es/bites/22/
+https://dbader.org/blog/python-decorators
+
+**Thing's I've learned.** 
+A decorator takes a function to decorate. They are useful to abstract away common behavior you want to apply to multiple functions! (e.g. login check, timeit)
+Basic syntax:
+
+    def mydecorator(function):
+        @wraps(function)
+        def wrapper(*args, **kwargs):
+            #do some stuff before the original  #function gets called
+            result = function(*args, **kwargs)
+            # do some stuff after function call
+            return result
+        return wrapper
+
+
+> function_name(*args, **kwargs)  
+
+*args gives is for an arbitrary argument list
+**kwargs for an arbitrary keywword argument dictionary kwargs always go last! 
+
+    get_profile('julian', False, 'basketball', 'soccer', pythonista='special honor of the community', topcoder='2017 code camp')
+
+    Positional arguments (required):  julian
+    Keyword arguments (not required, default values):  False
+    Arbitrary argument list (sports):  ('basketball', 'soccer')
+    Arbitrary keyword argument dictionary (awards):  {'pythonista': 'special honor of the community', 'topcoder': '2017 code camp'}
+
+Example:
+
+    def timeit(func):
+        '''Decorator to time a function'''
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+
+            #! before calling the decorated function
+            print('== starting timer')
+            start = time.time()
+
+            #! call the decorated function
+            func(*args, **kwargs)
+
+            #! after calling the decorated function
+            end = time.time()
+            print(f'== {func.__name__} took {int(end-start)} seconds to complete')
+
+        return wrapper
+
+
+* decorators can be stacked
+
+https://pybit.es/decorators-by-example.html
+
