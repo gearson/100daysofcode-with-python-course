@@ -69,32 +69,34 @@ For the #100days course I looked at the day 5 content, but did not fully get the
 Also looked more in depth of the day 5 content.
 
 **Thing's I've learned.**   
-
-    with open("x.txt") as f:  
-        data = f.read()  
-        do something with data
+``` Python
+with open("x.txt") as f:  
+    data = f.read()  
+    do something with data
 
 This will open a file and make sure it is closed.
+```
 
 From day 5:
+``` Python
+def get_movies_by_director(data=movies_csv):
 
-    def get_movies_by_director(data=movies_csv):
+    directors = defaultdict(list)
+    with open(data, encoding='utf-8') as f:
+        for line in csv.DictReader(f):
+            try:
+                director = line['director_name']
+                movie = line['movie_title'].replace('\xa0', '')
+                year = int(line['title_year'])
+                score = float(line['imdb_score'])
+            except ValueError:
+                continue
 
-        directors = defaultdict(list)
-        with open(data, encoding='utf-8') as f:
-            for line in csv.DictReader(f):
-                try:
-                    director = line['director_name']
-                    movie = line['movie_title'].replace('\xa0', '')
-                    year = int(line['title_year'])
-                    score = float(line['imdb_score'])
-                except ValueError:
-                    continue
+            m = Movie(title=movie, year=year, score=score)
+            directors[director].append(m)
 
-                m = Movie(title=movie, year=year, score=score)
-                directors[director].append(m)
-
-        return directors
+    return directors
+```
 
 The Output of each line from DictReader is:
 >OrderedDict([('color', 'Color'), ('director_name', 'Jon Gunn'), ('num_critic_for_reviews', '43') ... etc. ])
@@ -119,10 +121,12 @@ Also check pybite solutions 001, 021, 023, 034, 036, 042, 045, 055, 057, 063, 07
 **Thing's I've learned.** 
 Again worked through this syntax to read csv files:  
 
-    with open(filename, 'r') as csv_file:
-       csv_reader = csv.reader(csv_file)
-       for line in csv_reader:
-           print(line)    
+```Python
+with open(filename, 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    for line in csv_reader:
+        print(line)    
+```
 
 Leaving this here now, since there will be a csv module on day 37-39 of this course.  
 Also got reminded that I need this syntax when I want to loop over a dictionary:  
@@ -140,7 +144,9 @@ And use ', '.join(list) to join elements of a list to a single string with the g
 **Work log.** Completed pybite 89 and started on videos for day 10.
 
 **Thing's I've learned.** 
-> sorted(list, key = lambda k: len(k))[-1]
+```Python
+ sorted(list, key = lambda k: len(k))[-1]
+```
 
 This takes a list, lambdas through it and assigns each element a key with it's length. It then sorts them and here  we take the last one.
 
@@ -189,28 +195,35 @@ Also checkout https://pybit.es/pytest-fixtures.html
 **Thing's I've learned.** Learned mostly about list comprehensions and generators.  
 'string'.title() to capitalize first letter.
 Groupby two columns and only take the first of the duplicates
-> df_filtered = df.groupby(['UserId', 'DisplayTime']).head(1)
 
-> df_combis.columns[(df_combis == 1).iloc[i]]
+``` Python
+df_filtered = df.groupby(['UserId', 'DisplayTime']).head(1)
+
+df_combis.columns[(df_combis == 1).iloc[i]]
+```
 
 Used this for a problem today:
+``` Python
 action_dict = [{df_combis.index[i] : tuple(df_combis.columns[(df_combis == 1).iloc[i]])} for i in range(30)]
+```
 
 > words = [word for word in words if word.strip() and word not in stopwords]  
 
 If word.strip() to check for empty strings. If we check for word.strip()==True we discard empty strings
 
-    def leap_years_lst(n=1000000):
-        leap_years = []
-        for year in range(1, n+1):
-            if calendar.isleap(year):
-                leap_years.append(year)
-            return leap_years
+``` Python
+def leap_years_lst(n=1000000):
+    leap_years = []
+    for year in range(1, n+1):
+        if calendar.isleap(year):
+            leap_years.append(year)
+        return leap_years
 
-    def leap_years_gen(n=1000000):
-        for year in range(1, n+1):
-            if calendar.isleap(year):
-                yield year
+def leap_years_gen(n=1000000):
+    for year in range(1, n+1):
+        if calendar.isleap(year):
+            yield year
+```
 
 Generators are faster. They are yielding one by one lazyly.
 
@@ -250,27 +263,31 @@ filtered_dict = {your_key: bites[your_key] for your_key in bites.keys() if your_
 **Thing's I've learned.** For loops call __iter__.  
 next() can be used on an iterator. Returns StopIteratiom error when at the end of list. 
 
-    import itertools
-    import sys
-    import time
-    #%%
-    symbols = itertools.cycle('-\|/')
+``` Python
+import itertools
+import sys
+import time
+#%%
+symbols = itertools.cycle('-\|/')
 
-    while True:
-        sys.stdout.write('\r' + next(symbols))
-        sys.stdout.flush()
-        time.sleep(1) 
+while True:
+    sys.stdout.write('\r' + next(symbols))
+    sys.stdout.flush()
+    time.sleep(1) 
 
-    
-'\r' negates pulling output on new line.  
 
 from itertools import product  
-Used for Carthesian product.
 
-> print(list(combinations(friends, 2)))
-> [('mike', 'bob'), ('mike', 'julian'), ('bob', 'julian')]  
+print(list(combinations(friends, 2)))
+
+>>> [('mike', 'bob'), ('mike', 'julian'), ('bob', 'julian')]  
+
+```
 
 With permutations if the order of letters matters
+'\r' negates pulling output on new line.  
+Used for Carthesian product.
+
 
 ## Day 22: 19/09/14 
 
@@ -280,7 +297,9 @@ Traffic Light Script.
  * bonus script with random times for cycle duration between red and green.  
 
 **Thing's I've learned.** Used itertools.cycle to go through a list of strings  
-> colors = itertools.cycle(['Red', 'Amber', 'Green', 'Amber'])
+``` Python
+colors = itertools.cycle(['Red', 'Amber', 'Green', 'Amber'])
+```
 
 ## Day 23: 19/09/15
 
@@ -292,7 +311,9 @@ https://codechalleng.es/bites/65/
 Day 22 & 23 content about decorators.
 
 **Thing's I've learned.** zip() makes an iterator that aggregates elements from each of the iterables. Stops when the shortest input iterable is exhausted.  
-> itertools.zip_longest()  
+``` Python
+itertools.zip_longest()  
+```
 
 This will fill with None. The argument fillvalue you can use something else to fill.
 
@@ -308,15 +329,16 @@ https://dbader.org/blog/python-decorators
 A decorator takes a function to decorate. They are useful to abstract away common behavior you want to apply to multiple functions! (e.g. login check, timeit)
 Basic syntax:
 
-    def mydecorator(function):
-        @wraps(function)
-        def wrapper(*args, **kwargs):
-            #do some stuff before the original  #function gets called
-            result = function(*args, **kwargs)
-            # do some stuff after function call
-            return result
-        return wrapper
-
+``` Python
+def mydecorator(function):
+    @wraps(function)
+    def wrapper(*args, **kwargs):
+        #do some stuff before the original  #function gets called
+        result = function(*args, **kwargs)
+        # do some stuff after function call
+        return result
+    return wrapper
+```
 
 > function_name(*args, **kwargs)  
 
@@ -332,6 +354,7 @@ Basic syntax:
 
 Example:
 
+``` Python
     def timeit(func):
         '''Decorator to time a function'''
         @wraps(func)
@@ -349,9 +372,33 @@ Example:
             print(f'== {func.__name__} took {int(end-start)} seconds to complete')
 
         return wrapper
-
+```
 
 * decorators can be stacked
 
 https://pybit.es/decorators-by-example.html
 
+## Day 25/26: 19/09/18 
+
+**Work Log.** Error handling videos.
+
+**Thing's I've learned.**   
+
+    try:
+        try something
+    except:
+        Do this if it doesn't work.
+
+You can chain excepts and specify the error type before the colon.  
+E.g. except requests.exceptions.ConnectionError:
+
+If you don't know which error type you might get:  
+
+``` Python
+    except ConnectionError:
+        print('ConnectionError")
+    except Exception as x:
+        print(type(x))
+        print("Oh that didn't work.: {}".format(x))  
+```
+The general exception needs to be at the end of the except chain or it will catch anything. Go from most specific to most general.  
