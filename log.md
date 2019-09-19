@@ -402,3 +402,33 @@ If you don't know which error type you might get:
         print("Oh that didn't work.: {}".format(x))  
 ```
 The general exception needs to be at the end of the except chain or it will catch anything. Go from most specific to most general.  
+
+## Day 27: 19/09/19
+
+**Work Log.** Worked on pybite 105. 
+
+**Things's I've learned.** with text.splitlines() you can split text into lines.
+text.strip() will strip any leading and trailing whitespaces.
+'deniz'[::-1] to reverse a string. Somehow forgot that you can use another : to slice to the end/start of a list.
+
+```Python
+def slice_and_dice(text):
+
+    results = []
+    for line in text.strip().splitlines():
+        line = line.lstrip()
+        if line[0].islower():
+            words = line.split()[-1].rstrip('!.')
+            results.append(words)
+    return results
+
+# this is equivalent
+def slice_and_dice(text):
+    results = [line.split()[-1].rstrip('!.') 
+               for line in text.strip().splitlines() 
+               if line.lstrip()[0].islower()]
+    return results
+
+slice_and_dice(text)
+
+```
