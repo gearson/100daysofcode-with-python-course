@@ -432,3 +432,34 @@ def slice_and_dice(text):
 slice_and_dice(text)
 
 ```
+## Day 28: 19/09/20
+
+**Work Log.** Day 28 videos. Real Python video on pdb debugging.
+
+**Thing's I've learned.**
+With Python >3.7 just use breakpoint(). Execution will stop there and start a (pdb) prompt.  
+See variable content:  
+(pdb) p variable_name  
+
+Continue:  
+(pdb) s  
+
+### Regex
+
+Don't use regex, when there are powerful string methods available.  
+
+```Python
+text =  'Awesome, I am doing the #100DaysOfCode challenge'  
+text.startswith('Awesome')  
+text.endswith('challenge')  
+'100daysofcode' in text.lower
+text.replace('100','200')
+```
+
+re.match() needs to match end to end (use .*)
+
+Embed regex in r'' to avoid having to escape special characters like \d (digit), \w (char), \s (space), \S (non-space), etc (I think \\d and \\s clutters up the regex)  
+
+With: re.findall(r'[A-Z][a-z0-9]+', text) you can find all upper case words.  
+Or: re.findall(r'a[a-z0-9]+', text) for all words starting with a.  
+re.findall(r'\d+') finds all entries with one or more numbers.  
