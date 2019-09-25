@@ -463,3 +463,23 @@ Embed regex in r'' to avoid having to escape special characters like \d (digit),
 With: re.findall(r'[A-Z][a-z0-9]+', text) you can find all upper case words.  
 Or: re.findall(r'a[a-z0-9]+', text) for all words starting with a.  
 re.findall(r'\d+') finds all entries with one or more numbers.  
+
+## Day 29 & 30: 19/09/24 & 19/09/25
+
+**Work Log.** A lot of regex stuff for work. Day 29 & 30 videos, pybite 2
+
+**Thing's I've learned.** re.match() to check at the start of a string. re.search() looks at the first occurence of the pattern.  
+Use (?:) to not capture matching contents.  
+```Python
+re.findall(r'((?:#|http)\S+', string)
+```
+Without the ?: this would return None, if any of the two patterns doesn't match.
+
+```Python
+HTML = ('<p>pybites != greedy</p>'
+        '<p>not the same can be said REgarding ...</p>')
+
+m = re.search(r'<p>.*?</p>', html)
+result = m.group()  # only take first group
+result = re.sub(r'<p>|</p>', r'', result)  # replace <p> and </p> with empty
+```

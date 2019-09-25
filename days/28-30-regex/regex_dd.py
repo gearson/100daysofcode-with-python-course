@@ -1,5 +1,6 @@
 #%%
 import re
+import pandas as pd
 
 text = 'Awesome, I am doing the #100DaysOf Code challenge after all'
 
