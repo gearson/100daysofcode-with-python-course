@@ -483,3 +483,7 @@ m = re.search(r'<p>.*?</p>', html)
 result = m.group()  # only take first group
 result = re.sub(r'<p>|</p>', r'', result)  # replace <p> and </p> with empty
 ```
+
+Some resources:  
+https://docs.python.org/3.7/howto/regex.html#regex-howto  
+https://pybit.es/mastering-regex.html  

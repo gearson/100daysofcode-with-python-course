@@ -20,8 +20,9 @@ def extract_course_times(course=COURSE):
        ['01:47', '32:03', '41:51', '27:48', '05:02']
        Return this list.
     """
-    times = re.findall(r'[0-9][0-9]:[0-9][0-9]',course)
+    times = re.findall(r'\d\d:\d\d',course)
     return times
+extract_course_times()
 
 #%%
 
