@@ -490,3 +490,21 @@ result = re.sub(r'<p>|</p>', r'', result)  # replace <p> and </p> with empty
 Some resources:  
 https://docs.python.org/3.7/howto/regex.html#regex-howto  
 https://pybit.es/mastering-regex.html  
+
+## Day 31: 19/09/26
+
+**Work Log.** Day 31 content on logging. Mainly videos.
+
+**Thing's I've learned.**   
+Setting up a logbook:"
+
+```Python
+import logbook
+import sys
+
+# initialize the application's logging methods
+
+log_filename = ... # set for file logging, None for dev/console logging
+level = logbook.TRACE
+
+```
