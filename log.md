@@ -508,3 +508,10 @@ log_filename = ... # set for file logging, None for dev/console logging
 level = logbook.TRACE
 
 ```
+
+## Day 32: 19/09/27
+
+**Work Log.** Day 32 content. Implement logging into old app. Chose the traffic lights app!
+
+
+
