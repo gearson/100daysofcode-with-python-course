@@ -513,5 +513,33 @@ level = logbook.TRACE
 
 **Work Log.** Day 32 content. Implement logging into old app. Chose the traffic lights app!
 
+## Day 33: 19/09/28
+
+**Work Log.** Continued practicing some of the logging stuff.
+
+**Thing's I've learned.** 
+From the lesson README:  
+
+```python
+import logbook
+level = logbook.TRACE
+log_filename = ...
+
+if not log_filename:
+    logbook.StreamHandler(sys.stdout, level=level).push_application()  # this will print the log message to the terminal
+else:
+    logbook.TimedRotatingFileHandler(log_filename, level=level).push_application()
+
+# Then to log something, you create a logbook instance like this:
+
+app_log = logbook.Logger('App')
+app_log.notice("some message")
+
+# actions are:
+# notice / info / trace / warn / error / critical
+```
+
+
+
 
 

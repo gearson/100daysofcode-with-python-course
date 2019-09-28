@@ -48,4 +48,4 @@ def init_logging(filename: str = None):
 if __name__ == '__main__':
     # init_logging('days/31-33-logging/lights.log')
     init_logging()
-    main()
+#%%    main()
