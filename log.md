@@ -501,7 +501,7 @@ Setting up a logbook:"
 ```Python
 import logbook
 import sys
-
+ 
 # initialize the application's logging methods
 
 log_filename = ... # set for file logging, None for dev/console logging
@@ -539,7 +539,97 @@ app_log.notice("some message")
 # notice / info / trace / warn / error / critical
 ```
 
+## Day 34: 19/09/29
+
+**Work Log.** day 34 content on refactoring and pythonic code
+
+**Thing's I've learned.**  
+https://bobbelderbos.com/2016/03/building-maintainable-software/  
+
+* Use zip to combine two lists to a dictionary!
+ 
+``` Python
+days = 'Monday Tuesday Wednesday Thursday Friday Saturday Sunday'.split()
+routines = 'Chest+biceps Back+triceps Core Legs Shoulders Rest Rest'.split()
+
+workouts2 = dict(zip(days, routines))
+```
+
+* consider dictionaries instead of long if-else blocks
+
+* use enumerate to count within loops! enumerate(list,i) to change starting number of i!
+
+```Python
+# don't use this (like you did in matlab)
+i=0
+for day in days:
+    i += 1
+    print(f'{i}. {day}')
+
+# instead use:
+
+for i, day in enumerate(days):
+    print(f'{i+1}. {day}')
+
+for i, day in enumerate(days, 1):
+    print(f'{i}. {day}')
 
 
+```
 
+* use 'with' to open files, because it auto closes files on exceptions! This is a context manager!
+
+``` Python
+with open('text', 'w') as f:
+    f.write('hello\n')
+    raise Exception
+```
+
+* use built-ins (range, sum, max, min)
+
+```Python
+
+routines = 'Chest+biceps Back+triceps Core Legs Shoulders'.split()
+timings = '45 45 30 55 45'.split()
+
+workout_times = dict(zip(routines, timings))
+
+max(workout_times.items(), key=lambda x: x[1])  # use lambda to do it on the second index of each key-value pair 
+```
+
+* tuple unpacking and namedtuples
+
+    In Python this works: 
+    ```Python
+    a, b = 1, 2
+    a, b = b, a
+    a, b
+    >>> (2, 1)
+    ```
+
+    You can also unpack a function that returns two values by assigning it to two values:  
+    routine, minutes = max(workout_times.items(), key=lambda x: x[1])  
+
+* use this to concatenate strings:
+``` Python
+lst = ['hello world,', 'today I am happy,', 'because I am writing Python code!']
+
+' '.join(lst)
+```
+
+* name exceptions explicitly!  
+```Python
+def calc_value_improved(num1, num2):
+    try:
+        ret = num1/num2
+    except ZeroDivisionError:
+        print('cannot divide by 0')
+        return 0
+    except TypeError:
+        print('check if all input variables are int')
+        raise
+    except Exception as exc:
+        print(f'other exception: {exc}, reraising')
+        raise
+```
 
